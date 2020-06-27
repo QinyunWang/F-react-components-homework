@@ -5,6 +5,7 @@ import ChatBox from './ChatBox/ChatBox';
 import ChatInput from './ChatInput/ChatInput';
 import shopData from '../data/shop.json';
 import answersData from '../data/answers.json';
+import { ROLE } from '../constants';
 
 class Chat extends Component {
   constructor(props, context) {
@@ -25,8 +26,27 @@ class Chat extends Component {
         shop: shopData,
         messages,
       });
-    }, 1000);
+    }, 500);
   }
+
+  componentDidUpdate() {
+    const newMessage = this.state.messages[this.state.messages.length - 1];
+    if (newMessage.role === ROLE.CUSTOMER) {
+      const { text } = newMessage;
+      const responseMessage = answersData.filter((answer) => this.checker(text, answer.tags));
+
+      if (responseMessage) {
+        const resultMessages = this.state.messages.concat(responseMessage);
+        setTimeout(() => {
+          this.setState({
+            messages: resultMessages,
+          });
+        }, 500);
+      }
+    }
+  }
+
+  checker = (text, tags) => tags.some((element) => text.includes(element));
 
   setChatState = (state) => {
     this.setState(state);
