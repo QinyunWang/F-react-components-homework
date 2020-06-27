@@ -13,6 +13,7 @@ class Chat extends Component {
       shop: {},
       messages: [],
     };
+    this.setState.bind(this);
   }
 
   componentDidMount() {
@@ -27,13 +28,17 @@ class Chat extends Component {
     }, 1000);
   }
 
+  setChatState = (state) => {
+    this.setState(state);
+  };
+
   render() {
     const { shop, messages } = this.state;
     return (
       <main className="Chat">
         <ChatHeader shop={shop} />
         <ChatBox messages={messages} />
-        <ChatInput />
+        <ChatInput messages={messages} setChatState={this.setChatState} />
       </main>
     );
   }
