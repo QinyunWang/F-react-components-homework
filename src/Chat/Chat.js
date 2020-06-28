@@ -35,7 +35,7 @@ class Chat extends Component {
       const { text } = newMessage;
       const responseMessage = answersData.filter((answer) => this.checker(text, answer.tags));
 
-      if (responseMessage) {
+      if (responseMessage.length !== 0) {
         const resultMessages = this.state.messages.concat(responseMessage);
         setTimeout(() => {
           this.setState({
