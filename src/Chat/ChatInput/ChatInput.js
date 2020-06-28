@@ -20,7 +20,12 @@ const ChatInput = ({ messages, setChatState }) => {
 
   return (
     <footer className="ChatInput">
-      <input type="text" value={inputText} onChange={(e) => setInputText(e.target.value)} />
+      <input
+        type="text"
+        data-testid="chat-input"
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+      />
       <button type="button" onClick={handleButtonClick}>
         Send
       </button>

@@ -4,5 +4,5 @@ module.exports = {
     '.+\\.(css|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
   },
   setupFilesAfterEnv: ['./rtl.setup.js'],
-  collectCoverageFrom: ['src/**/*.js'],
+  collectCoverageFrom: ['src/**/*.js', '!src/index.js'],
 };
