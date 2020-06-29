@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import './App.scss';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Main } from '../styles';
 import Chat from '../Chat/Chat';
+import Welcome from '../Welcome/Welcome';
 
 class App extends Component {
   render() {
     return (
-      <div data-testid="app" className="App">
-        <Chat />
-      </div>
+      <Main>
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Welcome} />
+            <Route path="/welcome" component={Chat} />
+          </Switch>
+        </Router>
+      </Main>
     );
   }
 }

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './Chat.scss';
 import ChatHeader from './ChatHeader/ChatHeader';
 import ChatBox from './ChatBox/ChatBox';
 import ChatInput from './ChatInput/ChatInput';
 import shopData from '../data/shop.json';
 import answersData from '../data/answers.json';
 import { ROLE } from '../constants';
+import { ChatSection } from '../styles';
 
 class Chat extends Component {
   constructor(props, context) {
@@ -55,11 +55,11 @@ class Chat extends Component {
   render() {
     const { shop, messages } = this.state;
     return (
-      <main className="Chat">
+      <ChatSection>
         <ChatHeader shop={shop} />
         <ChatBox messages={messages} />
         <ChatInput messages={messages} setChatState={this.setChatState} />
-      </main>
+      </ChatSection>
     );
   }
 }
