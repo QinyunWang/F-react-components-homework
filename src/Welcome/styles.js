@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const WelcomeHeader = styled.div`
+export const Header = styled.div`
   padding: 30px 0 20px;
   background-color: #2f3542;
   border-top-left-radius: 28px;
