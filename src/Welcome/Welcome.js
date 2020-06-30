@@ -1,14 +1,17 @@
 import React from 'react';
 import { ChatSection } from '../styles';
-import { Header } from './styles';
+import { Header, Body } from './styles';
 import WelcomeFooter from './WelcomeFooter/WelcomeFooter';
-import ChatBox from '../Chat/ChatBox/ChatBox';
+import ShopLogo from './ShopLogo/ShopLogo';
+import shopData from '../data/shop.json';
 
 const Welcome = () => {
   return (
     <ChatSection>
       <Header>Welcome</Header>
-      <ChatBox messages={[]} />
+      <Body>
+        <ShopLogo shop={shopData} />
+      </Body>
       <WelcomeFooter />
     </ChatSection>
   );

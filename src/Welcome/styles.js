@@ -11,3 +11,11 @@ export const Header = styled.div`
   font-size: 18px;
   font-weight: 300;
 `;
+
+export const Body = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+`;
