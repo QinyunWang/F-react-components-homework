@@ -7,8 +7,12 @@ const WelcomeFooter = () => {
       <Section className="section" to="/chat">
         客服
       </Section>
-      <Section className="section">6.18活动</Section>
-      <Section className="section">关于我们</Section>
+      <Section className="section" to="/notfound">
+        6.18活动
+      </Section>
+      <Section className="section" to="/notfound">
+        关于我们
+      </Section>
     </Footer>
   );
 };

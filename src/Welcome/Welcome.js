@@ -1,6 +1,5 @@
 import React from 'react';
-import { ChatSection } from '../styles';
-import { Header, Body } from './styles';
+import { ChatSection, Header, Body } from '../styles';
 import WelcomeFooter from './WelcomeFooter/WelcomeFooter';
 import ShopLogo from './ShopLogo/ShopLogo';
 import shopData from '../data/shop.json';
