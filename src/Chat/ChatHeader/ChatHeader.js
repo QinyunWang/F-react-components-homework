@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './ChatHeader.scss';
 
 class ChatHeader extends Component {
@@ -9,8 +10,14 @@ class ChatHeader extends Component {
     };
     return (
       <header className="ChatHeader">
-        <div className="logo" style={logoStyle} />
-        <h1>{shop.name}</h1>
+        <Link className="link" to="/">
+          &lt;
+        </Link>
+        <>
+          <div className="logo" style={logoStyle} />
+          <h1>{shop.name}</h1>
+        </>
+        <div className="placeholder">&lt;</div>
       </header>
     );
   }
